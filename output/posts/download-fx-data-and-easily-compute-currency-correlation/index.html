@@ -96,6 +96,8 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this notebook, I download hourly data (though the granularity is easily adjustable) from OANDA for the current year and for a number of currency pairs. After saving the downloaded data, I retain the 'Close' prices and compute correlation as a diversification measure toward portfolio building. Note that I use 'Bid' and 'Ask', just as a matter of demonstration. The workhorse here is the <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">pandas dataframe</a>; well worth spending a lot of time on.</p>
+<!-- TEASER_END -->
+
 <p>First, the obligatory module imports...</p>
 
 </div>
@@ -248,10 +250,10 @@
 
  
  
-<div id="27264bd4-bd2f-414b-87ef-cf7375bc9e61"></div>
+<div id="0e40e5c3-1d0c-4cb4-9647-40c0227c5460"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#27264bd4-bd2f-414b-87ef-cf7375bc9e61');
+var element = $('#0e40e5c3-1d0c-4cb4-9647-40c0227c5460');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "78fff193f0a64c6cbe1292f1dffad539"}
 </script>
@@ -269,10 +271,10 @@ var element = $('#27264bd4-bd2f-414b-87ef-cf7375bc9e61');
 
  
  
-<div id="d9777239-8b7b-42b8-b42f-4716ee181597"></div>
+<div id="eac9d4f7-9eb2-43c8-be31-fdb20be56f2b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#d9777239-8b7b-42b8-b42f-4716ee181597');
+var element = $('#eac9d4f7-9eb2-43c8-be31-fdb20be56f2b');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "90640ebdd1b64f69bca6402bee1c4024"}
 </script>
@@ -290,10 +292,10 @@ var element = $('#d9777239-8b7b-42b8-b42f-4716ee181597');
 
  
  
-<div id="b762e10c-71a4-400f-bc00-df56f2a3a948"></div>
+<div id="bff617e0-c77b-495d-a386-92772e6fcee5"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#b762e10c-71a4-400f-bc00-df56f2a3a948');
+var element = $('#bff617e0-c77b-495d-a386-92772e6fcee5');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ef6880ecaac043a098cf264e2e8c6955"}
 </script>
@@ -311,10 +313,10 @@ var element = $('#b762e10c-71a4-400f-bc00-df56f2a3a948');
 
  
  
-<div id="7285b79c-633f-47aa-b2fa-258f0c756c99"></div>
+<div id="a27f169e-e9b5-4add-8519-ea4832ca59dd"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#7285b79c-633f-47aa-b2fa-258f0c756c99');
+var element = $('#a27f169e-e9b5-4add-8519-ea4832ca59dd');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6c6d6b9d75134627bb7438f853377634"}
 </script>
@@ -332,10 +334,10 @@ var element = $('#7285b79c-633f-47aa-b2fa-258f0c756c99');
 
  
  
-<div id="175609eb-051c-4b01-8218-62852b298bc7"></div>
+<div id="4e530685-a27c-4e55-a242-4552e39506ef"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#175609eb-051c-4b01-8218-62852b298bc7');
+var element = $('#4e530685-a27c-4e55-a242-4552e39506ef');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2182795cee144b5197ef564bb8368d57"}
 </script>
@@ -353,10 +355,10 @@ var element = $('#175609eb-051c-4b01-8218-62852b298bc7');
 
  
  
-<div id="aefd226b-433e-4b1b-af45-1d65b42b12c0"></div>
+<div id="73e12de6-5087-46e1-823d-8fb35ba1a204"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#aefd226b-433e-4b1b-af45-1d65b42b12c0');
+var element = $('#73e12de6-5087-46e1-823d-8fb35ba1a204');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "e21c42c5e6934b378621b0bf6077e328"}
 </script>
@@ -374,10 +376,10 @@ var element = $('#aefd226b-433e-4b1b-af45-1d65b42b12c0');
 
  
  
-<div id="78f1a836-5dc7-4556-babf-f1f19b598616"></div>
+<div id="9d8a11ec-2d53-4753-9ab1-67584adc009d"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#78f1a836-5dc7-4556-babf-f1f19b598616');
+var element = $('#9d8a11ec-2d53-4753-9ab1-67584adc009d');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1cfc79036ff94e5aab66711f6c847254"}
 </script>
@@ -395,10 +397,10 @@ var element = $('#78f1a836-5dc7-4556-babf-f1f19b598616');
 
  
  
-<div id="72ab43fd-0073-4735-8931-493f83afd003"></div>
+<div id="1b040974-59d1-4023-b5ef-fd695254a63f"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#72ab43fd-0073-4735-8931-493f83afd003');
+var element = $('#1b040974-59d1-4023-b5ef-fd695254a63f');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1b920ee384544de49af0de6ccc3f34f0"}
 </script>
@@ -416,10 +418,10 @@ var element = $('#72ab43fd-0073-4735-8931-493f83afd003');
 
  
  
-<div id="9fb2fba4-74ce-48ad-a15b-2488e42f8d3a"></div>
+<div id="875cb543-289b-4f86-9835-ffa67b8f9195"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9fb2fba4-74ce-48ad-a15b-2488e42f8d3a');
+var element = $('#875cb543-289b-4f86-9835-ffa67b8f9195');
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6c463b5c0ef3457ebdc410e1dd4e9ca6"}
 </script>
@@ -1055,7 +1057,8 @@ var element = $('#9fb2fba4-74ce-48ad-a15b-2488e42f8d3a');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's it for this post. Have a plentiful harvest!</p>
+<p>Redoing the selection mask should be pretty easy at this point and left to the reader as an exercise.
+That's it for this post. Have a plentiful harvest!</p>
 
 </div>
 </div>
