@@ -11775,7 +11775,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this notebook, I download hourly data (though the granularity is easily adjustable) from OANDA for the current year and for a number of currency pairs. After saving the downloaded data, I retain the 'Close' prices and compute correlation as a diversification measure toward portfolio building. Note that I use 'Bid' and 'Ask', just as a matter of demonstration. The workhorse here is the <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">pandas dataframe</a>; well worth spending a lot of time on.</p>
+<p>In this notebook, I use Python to download hourly data (though the granularity is easily adjustable) for the current year and for a number of currency pairs. After saving the downloaded data, I retain the 'Close' prices and compute correlation as a diversification measure toward portfolio building. Note that I use 'Bid' and 'Ask', just as a matter of demonstration. The workhorse here is the <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">pandas dataframe</a>; well worth spending a lot of time on.
+The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is pretty <a href="http://developer.oanda.com/">friendly toward developers</a>, and where I have a practice account.</p>
 <!-- TEASER_END -->
 
 <p>First, the obligatory module imports...</p>
@@ -11807,7 +11808,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Second, define my OANDA access</p>
+<p>Second, define OANDA access. Here you'll need to open an account and obtain access credentials in the form of ID and token. Both token and ID are set as variables, specified below, in my bash profile, where python can readily retrieve them.</p>
 
 </div>
 </div>
@@ -11926,10 +11927,10 @@ div#notebook {
 
  
  
-<div id="0e40e5c3-1d0c-4cb4-9647-40c0227c5460"></div>
+<div id="6a70f755-2aa9-438f-9b93-5e76b792ef98"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#0e40e5c3-1d0c-4cb4-9647-40c0227c5460');
+var element = $('#6a70f755-2aa9-438f-9b93-5e76b792ef98');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "78fff193f0a64c6cbe1292f1dffad539"}
@@ -11948,10 +11949,10 @@ var element = $('#0e40e5c3-1d0c-4cb4-9647-40c0227c5460');
 
  
  
-<div id="eac9d4f7-9eb2-43c8-be31-fdb20be56f2b"></div>
+<div id="eaf41382-f792-4323-a1a5-e02f5e00e409"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#eac9d4f7-9eb2-43c8-be31-fdb20be56f2b');
+var element = $('#eaf41382-f792-4323-a1a5-e02f5e00e409');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "90640ebdd1b64f69bca6402bee1c4024"}
@@ -11970,10 +11971,10 @@ var element = $('#eac9d4f7-9eb2-43c8-be31-fdb20be56f2b');
 
  
  
-<div id="bff617e0-c77b-495d-a386-92772e6fcee5"></div>
+<div id="8dc39adc-d83f-47bc-a162-67ae43f1dc57"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#bff617e0-c77b-495d-a386-92772e6fcee5');
+var element = $('#8dc39adc-d83f-47bc-a162-67ae43f1dc57');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "ef6880ecaac043a098cf264e2e8c6955"}
@@ -11992,10 +11993,10 @@ var element = $('#bff617e0-c77b-495d-a386-92772e6fcee5');
 
  
  
-<div id="a27f169e-e9b5-4add-8519-ea4832ca59dd"></div>
+<div id="e915c397-7a0a-4b7c-aaae-72820779cdda"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#a27f169e-e9b5-4add-8519-ea4832ca59dd');
+var element = $('#e915c397-7a0a-4b7c-aaae-72820779cdda');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6c6d6b9d75134627bb7438f853377634"}
@@ -12014,10 +12015,10 @@ var element = $('#a27f169e-e9b5-4add-8519-ea4832ca59dd');
 
  
  
-<div id="4e530685-a27c-4e55-a242-4552e39506ef"></div>
+<div id="4e326e87-dc11-4c98-b500-31ee428b23e0"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#4e530685-a27c-4e55-a242-4552e39506ef');
+var element = $('#4e326e87-dc11-4c98-b500-31ee428b23e0');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2182795cee144b5197ef564bb8368d57"}
@@ -12036,10 +12037,10 @@ var element = $('#4e530685-a27c-4e55-a242-4552e39506ef');
 
  
  
-<div id="73e12de6-5087-46e1-823d-8fb35ba1a204"></div>
+<div id="c704bf43-9a91-4294-a9bf-279197aeccd2"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#73e12de6-5087-46e1-823d-8fb35ba1a204');
+var element = $('#c704bf43-9a91-4294-a9bf-279197aeccd2');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "e21c42c5e6934b378621b0bf6077e328"}
@@ -12058,10 +12059,10 @@ var element = $('#73e12de6-5087-46e1-823d-8fb35ba1a204');
 
  
  
-<div id="9d8a11ec-2d53-4753-9ab1-67584adc009d"></div>
+<div id="3bf6d4cb-56d6-4509-b2fd-e5dd11763748"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9d8a11ec-2d53-4753-9ab1-67584adc009d');
+var element = $('#3bf6d4cb-56d6-4509-b2fd-e5dd11763748');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1cfc79036ff94e5aab66711f6c847254"}
@@ -12080,10 +12081,10 @@ var element = $('#9d8a11ec-2d53-4753-9ab1-67584adc009d');
 
  
  
-<div id="1b040974-59d1-4023-b5ef-fd695254a63f"></div>
+<div id="51499cb7-eaf3-4c5f-ad33-e1405d549c0c"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#1b040974-59d1-4023-b5ef-fd695254a63f');
+var element = $('#51499cb7-eaf3-4c5f-ad33-e1405d549c0c');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1b920ee384544de49af0de6ccc3f34f0"}
@@ -12102,10 +12103,10 @@ var element = $('#1b040974-59d1-4023-b5ef-fd695254a63f');
 
  
  
-<div id="875cb543-289b-4f86-9835-ffa67b8f9195"></div>
+<div id="3e5a4e3f-cb33-4a8c-aa7e-0d3eca42fcf8"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#875cb543-289b-4f86-9835-ffa67b8f9195');
+var element = $('#3e5a4e3f-cb33-4a8c-aa7e-0d3eca42fcf8');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "6c463b5c0ef3457ebdc410e1dd4e9ca6"}
@@ -13813,7 +13814,7 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This suggests a number of combination of currency pairs to add to a trading portfolio. It would not be prudent however to limit the analysis to this time frame alone. For kicks I'll repeat this exercise for the '4H', 'D', and 'W' timeframes, and plot the results side by side.</p>
+<p>This suggests a number of combination of currency pairs to add to a trading portfolio; e.g. <em>AUDUSD</em>, <em>CADJPY</em>, <em>USDCHF</em>. It would not be prudent however to limit the analysis to this time frame alone. For kicks I'll repeat this exercise for the '4H', 'D', and 'W' timeframes, and plot the results side by side.</p>
 <p>These steps should be done in a number of other time frames, depending on the type of trader doing the analysis and the particulars of the trading algorithm.</p>
 <p>Here I use the <strong>resample</strong> method, and use the last closing price of the 1H timeframe to recompute the new Close price:</p>
 
@@ -15007,11 +15008,24 @@ Zv1S7oh6NJwAAAAASUVORK5CYII=
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Redoing the selection mask should be pretty easy at this point and left to the reader as an exercise.
+<p>Changes are pretty subtle and would probably not alter e.g. first proposed selection. That's set re-doing the selection mask should be pretty easy at this point and left to the reader as an exercise.
 That's it for this post. Have a plentiful harvest!</p>
 
 </div>
