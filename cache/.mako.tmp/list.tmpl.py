@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1501257447.953891
+_modified_time = 1501257490.057276
 _enable_loop = True
 _template_filename = '/Users/PoFA/anaconda/lib/python3.6/site-packages/nikola/data/themes/base/templates/list.tmpl'
 _template_uri = 'list.tmpl'
@@ -39,10 +39,10 @@ def render_body(context,**pageargs):
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         archive_nav = _mako_get_namespace(context, 'archive_nav')
         items = _import_ns.get('items', context.get('items', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         def content():
             return render_content(context._locals(__M_locals))
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -66,10 +66,10 @@ def render_content(context,**pageargs):
         feeds_translations = _mako_get_namespace(context, 'feeds_translations')
         archive_nav = _mako_get_namespace(context, 'archive_nav')
         items = _import_ns.get('items', context.get('items', UNDEFINED))
+        title = _import_ns.get('title', context.get('title', UNDEFINED))
         def content():
             return render_content(context)
         messages = _import_ns.get('messages', context.get('messages', UNDEFINED))
-        title = _import_ns.get('title', context.get('title', UNDEFINED))
         __M_writer = context.writer()
         __M_writer('\n<article class="listpage">\n    <header>\n        <h1>')
         __M_writer(filters.html_escape(str(title)))
