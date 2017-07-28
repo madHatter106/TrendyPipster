@@ -6,15 +6,27 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://madhatter106.github.io/TrendyPipster/categories/cot.xml</loc>
+  <lastmod>2017-07-28T15:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://madhatter106.github.io/TrendyPipster/categories/indicator.xml</loc>
+  <lastmod>2017-07-28T15:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://madhatter106.github.io/TrendyPipster/categories/pandas.xml</loc>
+  <lastmod>2017-07-28T15:54:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://madhatter106.github.io/TrendyPipster/galleries/rss.xml</loc>
   <lastmod>2017-07-19T17:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/TrendyPipster/rss.xml</loc>
-  <lastmod>2017-07-28T15:52:00Z</lastmod>
+  <lastmod>2017-07-28T15:54:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://madhatter106.github.io/TrendyPipster/sitemap.xml</loc>
-  <lastmod>2017-07-28T15:52:00Z</lastmod>
+  <lastmod>2017-07-28T15:54:00Z</lastmod>
  </sitemap>
 </sitemapindex>
