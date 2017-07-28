@@ -24,7 +24,7 @@ BLOG_TITLE = "TrendyPipster"  # (translatable)
 SITE_URL = "https://madhatter106.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "https://madhatter106.github.io/TrendyPipster"
+BASE_URL = "https://madhatter106.github.io/TrendyPipster/"
 BLOG_EMAIL = "erdemk@protonmail.com"
 BLOG_DESCRIPTION = "A blog about FX data analysis, algorithm development and analysis and trading"  # (translatable)
 

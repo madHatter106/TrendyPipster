@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TrendyPipster</title><link>https://madhatter106.github.io/</link><description>A blog about FX data analysis, algorithm development and analysis and trading</description><atom:link href="https://madhatter106.github.io/TrendyPipster/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:erdemk@protonmail.com"&gt;Erdem Karaköylü&lt;/a&gt; </copyright><lastBuildDate>Fri, 28 Jul 2017 15:19:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Scraping and Storing COT Data</title><link>https://madhatter106.github.io/TrendyPipster/posts/scraping-and-storing-cot-data/</link><dc:creator>Erdem Karaköylü</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TrendyPipster</title><link>https://madhatter106.github.io/</link><description>A blog about FX data analysis, algorithm development and analysis and trading</description><atom:link href="https://madhatter106.github.io/TrendyPipster/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:erdemk@protonmail.com"&gt;Erdem Karaköylü&lt;/a&gt; </copyright><lastBuildDate>Fri, 28 Jul 2017 15:24:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Scraping and Storing COT Data</title><link>https://madhatter106.github.io/TrendyPipster/posts/scraping-and-storing-cot-data/</link><dc:creator>Erdem Karaköylü</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -7,8 +7,8 @@
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This post is about building a database from the &lt;a href="https://www.babypips.com/learn/forex/commitment-of-traders-report"&gt;Commitment Of Traders report for FOREX trading&lt;/a&gt;. The data I used is reported positions on futures contracts for a number of foreign currencies. Here I focus on those currencies making up the major pairs. From there it's easy to extend the list of currencies to any available in the COT report (see below for a fragment).
-&lt;!--TEASER END--&gt;
-&amp;lt;img src="cotfiles/samplecot.png" width="600" height="1200" /img&amp;gt;&lt;/p&gt;
+&lt;!--TEASER END--&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src="cotfiles/samplecot.png" width="600" height="1200" /img&amp;gt;&lt;/p&gt;
 &lt;p&gt;My goal is 3-fold.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;learn to get both historic and latest COT reports and store them.&lt;/li&gt;
@@ -252,10 +252,10 @@ First make a list of the contracts (as specified in the COT report) I'm interest
 
  
  
-&lt;div id="8f8dc196-8df2-4aeb-9487-824e5d55d20c"&gt;&lt;/div&gt;
+&lt;div id="110cbf62-ccd3-4329-a781-03081732ce7d"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_widget_view "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#8f8dc196-8df2-4aeb-9487-824e5d55d20c');
+var element = $('#110cbf62-ccd3-4329-a781-03081732ce7d');
 &lt;/script&gt;
 &lt;script type="application/vnd.jupyter.widget-view+json"&gt;
 {"model_id": "00f2428698464f88be9eda0af0b5c02e"}
