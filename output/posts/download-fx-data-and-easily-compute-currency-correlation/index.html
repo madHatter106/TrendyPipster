@@ -12,7 +12,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://madhatter106.github.io/TrendyPipster/posts/download-fx-data-and-easily-compute-currency-correlation/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Erdem Karaköylü">
-<link rel="next" href="../scraping-and-storing-cot-data/" title="Scraping and Storing COT Data" type="text/html">
+<link rel="next" href="../scraping-and-storing-cot-data/" title="Scraping and Storing COT Data - part I" type="text/html">
 <meta property="og:site_name" content="TrendyPipster">
 <meta property="og:title" content="Download FX Data and Easily Compute Currency Correlation">
 <meta property="og:url" content="https://madhatter106.github.io/TrendyPipster/posts/download-fx-data-and-easily-compute-currency-correlation/">
@@ -115,6 +115,7 @@ The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is 
 <span class="kn">import</span> <span class="nn">oandapy</span> <span class="k">as</span> <span class="nn">oy</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sb</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pl</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm_notebook</span>
 <span class="o">%</span> <span class="n">matplotlib</span> <span class="n">inline</span>
@@ -166,8 +167,8 @@ The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is 
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dateStart</span> <span class="o">=</span> <span class="s1">'2017-01-01'</span>
-<span class="n">dateEnd</span> <span class="o">=</span> <span class="s1">'2017-07-14'</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dateStart</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">'2017-01-01'</span><span class="p">,</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">dateEnd</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">instruments</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'USD_JPY'</span><span class="p">,</span> <span class="s1">'EUR_USD'</span><span class="p">,</span> <span class="s1">'GBP_USD'</span><span class="p">,</span> <span class="s1">'CAD_JPY'</span><span class="p">,</span>
                <span class="s1">'USD_CHF'</span><span class="p">,</span> <span class="s1">'EUR_JPY'</span><span class="p">,</span> <span class="s1">'EUR_CAD'</span><span class="p">,</span> <span class="s1">'AUD_USD'</span><span class="p">]</span>
 </pre></div>
@@ -214,16 +215,20 @@ The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">instr</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="n">instruments</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="s1">'H1'</span>
+    <span class="n">savename</span> <span class="o">=</span> <span class="s1">'</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s%s</span><span class="s1">'</span> <span class="o">%</span><span class="p">(</span><span class="n">instr</span><span class="p">,</span> <span class="n">dateStart</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%y%m</span><span class="si">%d</span><span class="s1">'</span><span class="p">),</span>
+                                <span class="n">dateEnd</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%y%m</span><span class="si">%d</span><span class="s1">'</span><span class="p">),</span> <span class="n">resolution</span><span class="p">,</span> <span class="s1">'.h5s'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm_notebook</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="n">instr</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">d1</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">)</span>
         <span class="n">d2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="s1">'T'</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_history</span><span class="p">(</span><span class="n">instrument</span><span class="o">=</span><span class="n">instr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">d1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">d2</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="s1">'H1'</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_history</span><span class="p">(</span><span class="n">instrument</span><span class="o">=</span><span class="n">instr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">d1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">d2</span><span class="p">,</span>
+                                    <span class="n">granularity</span><span class="o">=</span><span class="n">resolution</span><span class="p">)</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'candles'</span><span class="p">]))</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="k">pass</span>
@@ -231,7 +236,7 @@ The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is 
     <span class="n">dfCloseBid</span><span class="p">[</span><span class="n">instr</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'closeBid'</span><span class="p">]</span>
     <span class="n">dfCloseAsk</span><span class="p">[</span><span class="n">instr</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'closeAsk'</span><span class="p">]</span>
     <span class="c1"># Save Data to HDF5</span>
-    <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataSaveDir</span><span class="p">,</span><span class="s1">'</span><span class="si">%s</span><span class="s1">_170101_170101_1H</span><span class="si">%s</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">instr</span><span class="p">,</span><span class="s1">'.h5s'</span><span class="p">)),</span> <span class="s1">'w'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'table'</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5s</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dataSaveDir</span><span class="p">,</span> <span class="n">savename</span><span class="p">),</span> <span class="s1">'w'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'table'</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5s</span><span class="p">:</span>
         <span class="n">h5s</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span>
 </pre></div>
 
@@ -253,12 +258,12 @@ The brokerage I access is <a href="https://www.oanda.com/">OANDA</a>,  which is 
 
  
  
-<div id="974df981-d421-46d9-ac05-7546f8eeeb8c"></div>
+<div id="ff07c276-7174-475c-8e22-a724a79e3ba4"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#974df981-d421-46d9-ac05-7546f8eeeb8c');
+var element = $('#ff07c276-7174-475c-8e22-a724a79e3ba4');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "78fff193f0a64c6cbe1292f1dffad539"}
+{"model_id": "59e412fde12a4690a5e5bbd1d15cde92"}
 </script>
 </div>
 
@@ -274,12 +279,12 @@ var element = $('#974df981-d421-46d9-ac05-7546f8eeeb8c');
 
  
  
-<div id="45020ab6-121f-4d0a-9225-66aa405ef8a7"></div>
+<div id="38205754-0d69-425c-95f2-15065b946f32"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#45020ab6-121f-4d0a-9225-66aa405ef8a7');
+var element = $('#38205754-0d69-425c-95f2-15065b946f32');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "90640ebdd1b64f69bca6402bee1c4024"}
+{"model_id": "c81c9c81d9b14b5ba9bdb821b1bc2906"}
 </script>
 </div>
 
@@ -295,12 +300,12 @@ var element = $('#45020ab6-121f-4d0a-9225-66aa405ef8a7');
 
  
  
-<div id="63fbd946-772d-4d6d-a340-92c7c9f4287e"></div>
+<div id="4aa72eea-3faf-4b68-86fb-b2624c6aeace"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#63fbd946-772d-4d6d-a340-92c7c9f4287e');
+var element = $('#4aa72eea-3faf-4b68-86fb-b2624c6aeace');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ef6880ecaac043a098cf264e2e8c6955"}
+{"model_id": "64b156fcdc664ccda48af2f947001eb0"}
 </script>
 </div>
 
@@ -316,12 +321,12 @@ var element = $('#63fbd946-772d-4d6d-a340-92c7c9f4287e');
 
  
  
-<div id="23aac7fa-3dba-4296-9e67-436d734e3145"></div>
+<div id="6275b430-e07a-44fa-9db2-c7139c5f9da3"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#23aac7fa-3dba-4296-9e67-436d734e3145');
+var element = $('#6275b430-e07a-44fa-9db2-c7139c5f9da3');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "6c6d6b9d75134627bb7438f853377634"}
+{"model_id": "e448dec4df6e4006a524826369c7503b"}
 </script>
 </div>
 
@@ -337,12 +342,12 @@ var element = $('#23aac7fa-3dba-4296-9e67-436d734e3145');
 
  
  
-<div id="31c5ab7a-9bba-480a-a7b2-abbb0c395bbc"></div>
+<div id="b845cc06-dd98-4d8e-bf0b-692ac6632b5e"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#31c5ab7a-9bba-480a-a7b2-abbb0c395bbc');
+var element = $('#b845cc06-dd98-4d8e-bf0b-692ac6632b5e');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2182795cee144b5197ef564bb8368d57"}
+{"model_id": "b7d8b9eb96924d72a8ce042eb555c67f"}
 </script>
 </div>
 
@@ -358,12 +363,12 @@ var element = $('#31c5ab7a-9bba-480a-a7b2-abbb0c395bbc');
 
  
  
-<div id="468bb9c5-4c61-4538-b71d-55f2f6b57e28"></div>
+<div id="211ff3ab-d89b-40a8-b732-b81dfe4b62d8"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#468bb9c5-4c61-4538-b71d-55f2f6b57e28');
+var element = $('#211ff3ab-d89b-40a8-b732-b81dfe4b62d8');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e21c42c5e6934b378621b0bf6077e328"}
+{"model_id": "1bc3669a3d7741399ad481629cb75502"}
 </script>
 </div>
 
@@ -379,12 +384,12 @@ var element = $('#468bb9c5-4c61-4538-b71d-55f2f6b57e28');
 
  
  
-<div id="11054798-4a3d-43de-9907-88ff624aa40e"></div>
+<div id="37525790-0679-48ed-89ec-e7f873e75a26"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#11054798-4a3d-43de-9907-88ff624aa40e');
+var element = $('#37525790-0679-48ed-89ec-e7f873e75a26');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "1cfc79036ff94e5aab66711f6c847254"}
+{"model_id": "d00c3c2bfff044da9404cb7dc5ebf441"}
 </script>
 </div>
 
@@ -400,12 +405,12 @@ var element = $('#11054798-4a3d-43de-9907-88ff624aa40e');
 
  
  
-<div id="cae7e7cf-406b-4da1-a68a-137efce9aade"></div>
+<div id="8b480bcc-6fea-4353-9174-8e0593f3da28"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#cae7e7cf-406b-4da1-a68a-137efce9aade');
+var element = $('#8b480bcc-6fea-4353-9174-8e0593f3da28');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "1b920ee384544de49af0de6ccc3f34f0"}
+{"model_id": "4d5b9ae5ad47465eabeb1575f4483724"}
 </script>
 </div>
 
@@ -421,12 +426,12 @@ var element = $('#cae7e7cf-406b-4da1-a68a-137efce9aade');
 
  
  
-<div id="d63d46fb-7bb8-466d-9317-e59ac3d4bae0"></div>
+<div id="a84c4df2-12d0-40e3-a4aa-426d06654cf3"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#d63d46fb-7bb8-466d-9317-e59ac3d4bae0');
+var element = $('#a84c4df2-12d0-40e3-a4aa-426d06654cf3');
 </script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "6c463b5c0ef3457ebdc410e1dd4e9ca6"}
+{"model_id": "e4454b414cce4445bdec2b3dc54ef8f6"}
 </script>
 </div>
 
@@ -1072,7 +1077,7 @@ That's it for this post. Have a plentiful harvest!</p>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="next">
-                <a href="../scraping-and-storing-cot-data/" rel="next" title="Scraping and Storing COT Data">Next post</a>
+                <a href="../scraping-and-storing-cot-data/" rel="next" title="Scraping and Storing COT Data - part I">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
